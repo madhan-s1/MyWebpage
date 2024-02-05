@@ -28,6 +28,7 @@ body {
   font-weight: 300;
   color: #e0deea;
   line-height: 1.9;
+  overflow: hidden;
   background-color: #14131a;
 }
 

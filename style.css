@@ -686,7 +686,7 @@ h4 {
 @media only screen and (max-width: 600px) {
   body {
     font-size: 60%;
-    zoom: 0.4;
+    zoom: 0.8;
   }
 
   .section {

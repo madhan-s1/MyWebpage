@@ -687,8 +687,9 @@ h4 {
 /* Media query for mobile devices */
 @media only screen and (max-width: 380px) {
   body {
-    font-size: 14px;
-    zoom: 0.4;
+    /* font-size: 14px;
+    zoom: 0.4; */
+    min-width: 960px;
   }
 
   .section {

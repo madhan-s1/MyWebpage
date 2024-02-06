@@ -28,7 +28,6 @@ body {
   font-weight: 300;
   color: #e0deea;
   line-height: 1.9;
-  overflow-x: hidden;
   background-color: #14131a;
 }
 
@@ -686,10 +685,7 @@ h4 {
 /* Media query for mobile devices */
 @media only screen and (max-width: 600px) {
   body {
-    font-size: 10%;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
-    zoom: 0.3;
+    font-size: 60%;
   }
 
   .section {

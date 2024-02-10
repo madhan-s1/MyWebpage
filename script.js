@@ -2,7 +2,9 @@
 
 ///////////////////////////////////////
 // Modal window
-
+const initView = document.querySelector('.initview');
+const openbtn = document.querySelector('.openview');
+const motionText = document.querySelector('.motion-text');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
@@ -12,6 +14,26 @@ const section1 = document.querySelector('#section--1');
 const navLink = document.querySelectorAll('.nav__link');
 const navLinks = document.querySelector('.nav__links');
 const nav = document.querySelector('.nav');
+
+// !OpenView and Close View:
+
+const openView = function () {
+  initView.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  motionText.classList.remove('hidden');
+
+  console.log('check');
+};
+openView();
+
+const closeView = function () {
+  initView.classList.add('hidden');
+  overlay.classList.add('hidden');
+  motionText.classList.add('hidden');
+};
+
+openbtn.addEventListener('click', closeView);
+motionText.addEventListener('click', closeView);
 
 //! Button open and close Modal:
 const open = function () {
@@ -224,15 +246,41 @@ const sendMail = function () {
     });
 };
 
-var viewMode = getCookie('view-mode');
-if (viewMode == 'desktop') {
-  viewport.setAttribute('content', 'width=1024');
-} else if (viewMode == 'mobile') {
-  viewport.setAttribute(
-    'content',
-    'width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no'
-  );
+// Check if fullscreen mode is supported by the browser
+function toggleFullScreen() {
+  if (
+    !document.fullscreenElement && // alternative standard method
+    !document.mozFullScreenElement &&
+    !document.webkitFullscreenElement &&
+    !document.msFullscreenElement
+  ) {
+    // current working methods
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+      console.log('working');
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(
+        Element.ALLOW_KEYBOARD_INPUT
+      );
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
 }
 
-// const submit = document.querySelector('.submit');
-// submit.addEventListener('click', sendMail);
+// Call the toggleFullScreen function when the page loads
+window.onload = function () {
+  toggleFullScreen();
+};

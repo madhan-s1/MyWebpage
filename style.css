@@ -8,7 +8,7 @@
   --color-primary-opacity: #5ec5763a;
   --color-secondary-opacity: #ffcd0331;
   --color-tertiary-opacity: #ff58602d;
-  --gradient-primary: linear-gradient(to top left, #7e559b, #9be15d);
+  --gradient-primary: linear-gradient(to top left, #9705ff, #ea4084);
   --gradient-secondary: linear-gradient(to top left, #ffb003, #ffcb03);
 }
 
@@ -130,8 +130,18 @@ img {
   /* background-color: rgba(255, 255, 255, 0.95); */
 }
 
+.logocolor {
+  height: 4.5rem;
+  background: linear-gradient(to bottom right, #9705ff, #ea4084);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s;
+}
+
 .nav__logo {
   height: 4.5rem;
+
   transition: all 0.3s;
 }
 
@@ -610,6 +620,44 @@ h4 {
   z-index: 1000;
   transition: all 0.5s;
 }
+
+.initview {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500rem;
+  /* background-color: #f3f3f3; */
+  /* padding: 5rem 6rem; */
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 500;
+  transition: all 0.5s;
+}
+
+.motion-text {
+  text-align: center;
+  margin-top: 130px;
+  font-size: 10px;
+  height: 4.5rem;
+  background: white;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s;
+}
+.motion-text h1:hover {
+  cursor: pointer;
+}
+.motion-text h1 {
+  font-size: 20px;
+}
+
+/* 
+/* .loadingimg {
+  background: transparent;
+  /* background-color: #f3f3f3; */
+/* transform: translate(-50%, -50%); */
+/* } */
 
 .overlay {
   position: fixed;

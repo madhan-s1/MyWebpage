@@ -281,6 +281,6 @@ function toggleFullScreen() {
 }
 
 // Call the toggleFullScreen function when the page loads
-window.onload = function () {
-  toggleFullScreen();
-};
+// window.onload = function () {
+//   toggleFullScreen();
+// };

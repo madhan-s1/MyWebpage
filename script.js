@@ -233,7 +233,7 @@ const sendMail = function () {
   };
 
   emailjs
-    .send('service_f902xwx', 'template_6dzivql', params)
+    .send('service_0s7mn6f', 'template_6dzivql', params)
     .then(function (res) {
       console.log('✅ Email sent successfully!', res);
       alert(

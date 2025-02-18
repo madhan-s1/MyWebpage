@@ -24,7 +24,7 @@ const openView = function () {
 
   console.log('check');
 };
-openView();
+// openView();
 
 const closeView = function () {
   initView.classList.add('hidden');
@@ -235,52 +235,15 @@ const sendMail = function () {
   emailjs
     .send('service_f902xwx', 'template_6dzivql', params)
     .then(function (res) {
-      console.log(res);
-      alert(`I'll contact you shortly!` + res.status);
+      console.log('✅ Email sent successfully!', res);
+      alert(
+        `✅ Email Sent Successfully!\n\nDear ${params.name},\nThank you for reaching out! I'll get back to you shortly.`
+      );
     })
     .catch(function (error) {
-      console.error('Error:', error);
+      console.error('❌ Error sending email:', error);
       alert(
-        'Failed to submit. Please try again or drop a mail to madhan038s@gmail.com'
+        '⚠️ Failed to submit. Please try again or drop a mail to madhan038s@gmail.com'
       );
     });
 };
-
-// Check if fullscreen mode is supported by the browser
-function toggleFullScreen() {
-  if (
-    !document.fullscreenElement && // alternative standard method
-    !document.mozFullScreenElement &&
-    !document.webkitFullscreenElement &&
-    !document.msFullscreenElement
-  ) {
-    // current working methods
-    if (document.documentElement.requestFullscreen) {
-      document.documentElement.requestFullscreen();
-      console.log('working');
-    } else if (document.documentElement.msRequestFullscreen) {
-      document.documentElement.msRequestFullscreen();
-    } else if (document.documentElement.mozRequestFullScreen) {
-      document.documentElement.mozRequestFullScreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-      document.documentElement.webkitRequestFullscreen(
-        Element.ALLOW_KEYBOARD_INPUT
-      );
-    }
-  } else {
-    if (document.exitFullscreen) {
-      document.exitFullscreen();
-    } else if (document.msExitFullscreen) {
-      document.msExitFullscreen();
-    } else if (document.mozCancelFullScreen) {
-      document.mozCancelFullScreen();
-    } else if (document.webkitExitFullscreen) {
-      document.webkitExitFullscreen();
-    }
-  }
-}
-
-// Call the toggleFullScreen function when the page loads
-// window.onload = function () {
-//   toggleFullScreen();
-// };
